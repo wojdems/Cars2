@@ -1,0 +1,45 @@
+.search_bar {
+    margin: 5px;
+    padding: 5px;
+    margin-left: 300px;
+}
+
+#cars {
+    margin-left: 300px;
+}
+
+.car_box {
+    display: flex;
+    border: solid lightgray 1px;
+    margin: 15px 0px;
+    max-width: 1000px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.car_spec {
+    display: flex;
+}
+
+.car_box:hover .h1hover {
+    background-color: black;
+    color: ghostwhite;
+}
+
+.car_box img {
+    display: inline-block;
+    height: auto;
+    max-width: 400px;
+}
+
+.car_information {
+    margin-left: 10px;
+}
+
+.price {
+    color: rgb(173, 1, 1);
+}
+
+.hidden {
+    display: none;
+}

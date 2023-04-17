@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="form.css" />
+    <script src="formjs.js" defer></script>
+    <title>Car Sales</title>
+  </head>
+
+  <body>
+    <header>
+      CAR SALES <img src="CarLogo/audi.jpg" alt="" />
+      <img src="CarLogo/BMW.jpeg" alt="" />
+      <img src="CarLogo/mercedes.png" alt="" />
+    </header>
+    <div class="content">
+      <h1>Fillout the form and buy your dream car!</h1>
+      <form id="buyer_details" method="get" action="thankYouPage.html">
+        <fieldset>
+          <legend>Choose paying form:</legend>
+          <div>
+            <input
+              type="radio"
+              id="leasing"
+              name="pay_form"
+              value="leasing"
+              required
+            />
+            <label for="leasing">Leasing</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="cash"
+              name="pay_form"
+              value="cash"
+              required
+            />
+            <label for="cash">Cash</label>
+          </div>
+        </fieldset>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required minlength="2" />
+
+        <label for="last_name">Last name:</label>
+        <input
+          type="text"
+          id="last_name"
+          name="last_name"
+          required
+          minlength="2"
+        />
+
+        <label for="date">Arrival day:</label>
+        <input type="date" id="date" required />
+      </form>
+      <div id="chosedCarDetails"></div>
+      <div class="accesories_box">
+        <h2>Accesories</h2>
+        <div class="accesories">
+          Steel rims: 4500 <button class="accesoriesButton">+</button>
+          <button class="accesoriesButton visibility">-</button>
+        </div>
+        <div class="accesories">
+          Additional 5-year warranty: 15000
+          <button class="accesoriesButton">+</button>
+          <button class="accesoriesButton visibility">-</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <button id="back">&#60; Back to cars</button>
+    </footer>
+  </body>
+</html>

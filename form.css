@@ -1,0 +1,54 @@
+
+form {
+    display: inline-block;
+    max-width: 200px;
+ 
+}
+
+.accesories_box {
+    margin-left: 50px;
+    width: 400px;
+}
+
+.accesories {
+    display: flex;
+    border: 3px solid black;
+    padding: 20px;
+    margin: 5px;
+}
+
+#chosedCarDetails {
+    display: inline-block;
+    margin-left: 300px;
+}
+
+.accesoriesButton{
+margin-left: 10px;
+background-color: gray;
+padding: 5px 15px;
+text-align: center;
+cursor: pointer;
+}
+
+.visibility {
+    visibility: hidden;
+}
+
+.content {
+    text-align: center;
+}
+
+footer {
+    text-align: left;
+    margin: 30px;
+}
+
+#buyNow {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+}

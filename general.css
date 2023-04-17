@@ -1,0 +1,21 @@
+body {
+    background-color: ghostwhite;
+}
+
+header img {
+    max-height: 100px;
+    width: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1%;
+    border-bottom: solid lightgray 1px;
+    margin-bottom: 1%;
+}
+
+.hidden {
+    display: none;
+}
