@@ -1,14 +1,14 @@
-.search_bar {
+.searchBar {
     margin: 5px;
     padding: 5px;
     margin-left: 300px;
 }
 
-#cars {
+#allCars {
     margin-left: 300px;
 }
 
-.car_box {
+.carBox {
     display: flex;
     border: solid lightgray 1px;
     margin: 15px 0px;
@@ -17,22 +17,22 @@
     cursor: pointer;
 }
 
-.car_spec {
-    display: flex;
+.carBox:hover {
+    box-shadow: 5px 5px 5px 5px black;
 }
 
-.car_box:hover .h1hover {
+.carBox:hover .h1hover {
     background-color: black;
     color: ghostwhite;
 }
 
-.car_box img {
+.carBox img {
     display: inline-block;
     height: auto;
     max-width: 400px;
 }
 
-.car_information {
+.carInformation {
     margin-left: 10px;
 }
 
