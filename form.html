@@ -18,14 +18,14 @@
     </header>
     <div class="content">
       <h1>Fillout the form and buy your dream car!</h1>
-      <form id="buyer_details" method="get" action="thankYouPage.html">
+      <form id="buyerDetails" method="get" action="thankYouPage.html">
         <fieldset>
           <legend>Choose paying form:</legend>
           <div>
             <input
               type="radio"
               id="leasing"
-              name="pay_form"
+              name="payForm"
               value="leasing"
               required
             />
@@ -35,7 +35,7 @@
             <input
               type="radio"
               id="cash"
-              name="pay_form"
+              name="payForm"
               value="cash"
               required
             />
@@ -46,11 +46,11 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required minlength="2" />
 
-        <label for="last_name">Last name:</label>
+        <label for="lastName">Last name:</label>
         <input
           type="text"
-          id="last_name"
-          name="last_name"
+          id="lastName"
+          name="lastName"
           required
           minlength="2"
         />
@@ -59,16 +59,16 @@
         <input type="date" id="date" required />
       </form>
       <div id="chosedCarDetails"></div>
-      <div class="accesories_box">
+      <div class="accesoriesBox">
         <h2>Accesories</h2>
         <div class="accesories">
           Steel rims: 4500 <button class="accesoriesButton">+</button>
-          <button class="accesoriesButton visibility">-</button>
+          <button class="accesoriesButton visibilityHidden">-</button>
         </div>
         <div class="accesories">
           Additional 5-year warranty: 15000
           <button class="accesoriesButton">+</button>
-          <button class="accesoriesButton visibility">-</button>
+          <button class="accesoriesButton visibilityHidden">-</button>
         </div>
       </div>
     </div>
