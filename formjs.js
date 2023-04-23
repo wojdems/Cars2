@@ -1,9 +1,9 @@
-let $back = document.getElementById(`back`)
-let $accesoriesButton = document.getElementsByClassName(`accesoriesButton`)
-let $chosedCarDetails = document.getElementById(`chosedCarDetails`)
-let $date = document.getElementById(`date`)
-let $formDetails = document.getElementById(`buyer_details`)
-let $pay_form = document.getElementsByName(`pay_form`)
+const $back = document.getElementById(`back`)
+const $accesoriesButton = document.getElementsByClassName(`accesoriesButton`)
+const $chosedCarDetails = document.getElementById(`chosedCarDetails`)
+const $date = document.getElementById(`date`)
+const $formDetails = document.getElementById(`buyerDetails`)
+const $payForm = document.getElementsByName(`payForm`)
 
 
 
@@ -15,72 +15,86 @@ for (let i = 0; i < $accesoriesButton.length; i++) {
 //actual date +14 days 
 let date = new Date();
 date.setDate(date.getDate() + 14)
-let year = date.getFullYear()
-let month = ("0" + (date.getMonth() + 1)).slice(-2)
-let day = ("0" + date.getDate()).slice(-2)
+const year = date.getFullYear()
+const month = ("0" + (date.getMonth() + 1)).slice(-2)
+const day = ("0" + date.getDate()).slice(-2)
 
 $date.value = `${year}-${month}-${day}`
 
 //get informations about chosed car
-carSpec = JSON.parse(window.localStorage.getItem(`carSpec`))
+let carSpec = JSON.parse(window.localStorage.getItem(`carSpec`))
 $back.addEventListener(`click`, () => {
     window.location.href = `main.html`
 })
 
 //set actual price
+
+carSpec.Info.Price = carSpec.Info.Price.slice(0, -3)
+carSpec.Info.Price = carSpec.Info.Price.replace(",", "")
+carSpec.Info.Price = parseInt(carSpec.Info.Price)
 let totalAmount = carSpec.Info.Price
 priceUpdate()
 
 function priceUpdate() {
-    $chosedCarDetails.innerHTML = `<p><h2>Car model: ${carSpec.Brand} ${carSpec.Model}</p> <p>Price: ${totalAmount}</p></h2> <p><button type="submit" id="buyNow" form="buyer_details">Buy now!</button></p>`
-    window.localStorage.setItem(`price`, totalAmount)
+    $chosedCarDetails.innerHTML = `<p><h2>Car model: ${carSpec.Brand} ${carSpec.Model}</p> <p>Price: ${totalAmount} USD</p></h2> <p><button type="submit" id="buyNow" form="buyerDetails">Buy now!</button></p>`
 }
+
+
 
 function accesories() {
+    let isHidden = []
     if (this === $accesoriesButton[0]) {
         totalAmount += 4500
-        this.classList.add(`visibility`)
-        $accesoriesButton[1].classList.remove(`visibility`)
+        this.classList.add(`visibilityHidden`)
+        $accesoriesButton[1].classList.remove(`visibilityHidden`)
     } else if (this === $accesoriesButton[2]) {
         totalAmount += 15000
-        this.classList.add(`visibility`)
-        $accesoriesButton[3].classList.remove(`visibility`)
+        this.classList.add(`visibilityHidden`)
+        $accesoriesButton[3].classList.remove(`visibilityHidden`)
     } else if (this === $accesoriesButton[1]) {
         totalAmount -= 4500
-        this.classList.add(`visibility`)
-        $accesoriesButton[0].classList.remove(`visibility`)
+        this.classList.add(`visibilityHidden`)
+        $accesoriesButton[0].classList.remove(`visibilityHidden`)
     } else if (this === $accesoriesButton[3]) {
         totalAmount -= 15000
-        this.classList.add(`visibility`)
-        $accesoriesButton[2].classList.remove(`visibility`)
+        this.classList.add(`visibilityHidden`)
+        $accesoriesButton[2].classList.remove(`visibilityHidden`)
     }
     priceUpdate()
-}
-
-
-//save form details
-$formDetails.addEventListener("change", () => {
-    for (i = 0; i < $pay_form.length; i++) {
-        if ($pay_form[i].checked) {
-            var radioValue = $pay_form[i].value
+    for(let i=0; i<$accesoriesButton.length; i++){
+        if($accesoriesButton[i].classList.contains(`visibilityHidden`)) {
+            isHidden[i]=true
+        } else {
+            isHidden[i]=false
         }
     }
-    let formDetails = {
+     localStorage.setItem("accesoriesMemory", JSON.stringify(isHidden))
+    //  window.localStorage.setItem(`price`, totalAmount)
+}
+
+let radioValue = 0
+//save form details
+$formDetails.addEventListener("change", () => {
+    for (let i = 0; i < $payForm.length; i++) {
+        if ($payForm[i].checked) {
+             radioValue = $payForm[i].value
+        }
+    }
+    const formDetails = {
         radio: radioValue,
         name: $formDetails[3].value,
         lastName: $formDetails[4].value,
         date: $formDetails[5].value
     }
-    console.log(formDetails)
     window.localStorage.setItem('formDetails', JSON.stringify(formDetails));
 })
 
 //set form details on refresh
 function setFormDetails() {
     let formDetails = JSON.parse(window.localStorage.getItem(`formDetails`))
-    for (i = 0; i < $pay_form.length; i++) {
-        if ($pay_form[i].value === formDetails.radio) {
-            $pay_form[i].checked = true
+    for (let i = 0; i < $payForm.length; i++) {
+        if ($payForm[i].value === formDetails.radio) {
+            $payForm[i].checked = true
         }
     }
 
@@ -92,3 +106,20 @@ function setFormDetails() {
 if (localStorage.getItem(`formDetails`) !== null) {
     setFormDetails()
 }
+
+if (localStorage.getItem(`accesoriesMemory`)) {
+    let isHidden = JSON.parse(window.localStorage.getItem(`accesoriesMemory`))
+    console.log(isHidden)
+    for(let i=0; i<$accesoriesButton.length; i++){
+        if(isHidden[i]===true) {
+            $accesoriesButton[i].classList.add(`visibilityHidden`)
+        } else {
+            $accesoriesButton[i].classList.remove(`visibilityHidden`)
+        }
+    }
+}
+
+// if (localStorage.getItem(`price`)){
+//     totalAmount = parseInt(localStorage.getItem(`price`))
+//     console.log(totalAmount)
+// }
