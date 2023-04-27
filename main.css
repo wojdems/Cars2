@@ -15,10 +15,11 @@
     max-width: 1000px;
     border-radius: 5px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .carBox:hover {
-    box-shadow: 5px 5px 5px 5px black;
+    box-shadow: 0px 0px 5px 2px black;
 }
 
 .carBox:hover .h1hover {
