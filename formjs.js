@@ -27,12 +27,9 @@ $back.addEventListener(`click`, () => {
     window.location.href = `main.html`
 })
 
-//set actual price
 
-carSpec.Info.Price = carSpec.Info.Price.slice(0, -3)
-carSpec.Info.Price = carSpec.Info.Price.replace(",", "")
-carSpec.Info.Price = parseInt(carSpec.Info.Price)
-let totalAmount = carSpec.Info.Price
+let totalAmount = parseInt(window.localStorage.getItem(`price`))
+window.localStorage.setItem(`price`, totalAmount)
 priceUpdate()
 
 function priceUpdate() {
@@ -40,37 +37,27 @@ function priceUpdate() {
 }
 
 
-
 function accesories() {
-    let isHidden = []
-    if (this === $accesoriesButton[0]) {
-        totalAmount += 4500
-        this.classList.add(`visibilityHidden`)
-        $accesoriesButton[1].classList.remove(`visibilityHidden`)
-    } else if (this === $accesoriesButton[2]) {
-        totalAmount += 15000
-        this.classList.add(`visibilityHidden`)
-        $accesoriesButton[3].classList.remove(`visibilityHidden`)
-    } else if (this === $accesoriesButton[1]) {
-        totalAmount -= 4500
-        this.classList.add(`visibilityHidden`)
-        $accesoriesButton[0].classList.remove(`visibilityHidden`)
-    } else if (this === $accesoriesButton[3]) {
-        totalAmount -= 15000
-        this.classList.add(`visibilityHidden`)
-        $accesoriesButton[2].classList.remove(`visibilityHidden`)
+let isHidden = []
+for(let i=0 ; i< $accesoriesButton.length ; i++){
+    if($accesoriesButton[i].classList[1] == this.classList[1]){
+        $accesoriesButton[i].classList.toggle('visibilityHidden')
+
+    } 
+    if($accesoriesButton[i].classList.contains(`visibilityHidden`)) {
+        isHidden[i]=true
+    } else {
+        isHidden[i]=false
     }
-    priceUpdate()
-    for(let i=0; i<$accesoriesButton.length; i++){
-        if($accesoriesButton[i].classList.contains(`visibilityHidden`)) {
-            isHidden[i]=true
-        } else {
-            isHidden[i]=false
-        }
-    }
-     localStorage.setItem("accesoriesMemory", JSON.stringify(isHidden))
-    //  window.localStorage.setItem(`price`, totalAmount)
+    localStorage.setItem("accesoriesMemory", JSON.stringify(isHidden))
+    
 }
+totalAmount += parseInt(this.dataset.price)
+priceUpdate()
+window.localStorage.setItem(`price`, totalAmount)
+}
+
+
 
 let radioValue = 0
 //save form details
@@ -109,7 +96,6 @@ if (localStorage.getItem(`formDetails`) !== null) {
 
 if (localStorage.getItem(`accesoriesMemory`)) {
     let isHidden = JSON.parse(window.localStorage.getItem(`accesoriesMemory`))
-    console.log(isHidden)
     for(let i=0; i<$accesoriesButton.length; i++){
         if(isHidden[i]===true) {
             $accesoriesButton[i].classList.add(`visibilityHidden`)
@@ -118,8 +104,3 @@ if (localStorage.getItem(`accesoriesMemory`)) {
         }
     }
 }
-
-// if (localStorage.getItem(`price`)){
-//     totalAmount = parseInt(localStorage.getItem(`price`))
-//     console.log(totalAmount)
-// }
