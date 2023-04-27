@@ -11,7 +11,7 @@ const cars = [{
             Color: `black`,
             Power: `441 kW`,
             Mileage: `150000 km`,
-            Price: `450,000 USD`,
+            Price: `450000`,
         },
         Img: "cars/audi-rs6.jpg"
     },
@@ -23,7 +23,7 @@ const cars = [{
             Color: `black`,
             Power: `230 kW`,
             Mileage: `50000 km`,
-            Price: `230,000 USD`,
+            Price: `230000`,
         },
         Img: "cars/Mercedes-Benz-GLS.jpg"
     },
@@ -35,7 +35,7 @@ const cars = [{
             Color: `green`,
             Power: `309 kW`,
             Mileage: `30000 km`,
-            Price: `70,000 USD`,
+            Price: `70000`,
         },
         Img: "cars/BMW_M3.jpg"
     }, 
@@ -47,7 +47,7 @@ const cars = [{
           Color: "White",
           Power: "150 HP",
           Mileage: "10,000 km",
-          Price: "35,000 USD"
+          Price: "35000"
         },
         Img: "cars/audi-a3.jpeg"
       },
@@ -59,7 +59,7 @@ const cars = [{
           Color: "Black",
           Power: "265 HP",
           Mileage: "25,000 km",
-          Price: "50,000 USD"
+          Price: "50000"
         },
         Img: ""
       },
@@ -71,7 +71,7 @@ const cars = [{
           Color: "Red",
           Power: "455 HP",
           Mileage: "15,000 km",
-          Price: "35,000 USD"
+          Price: "35000"
         },
         Img: ""
       },
@@ -83,7 +83,7 @@ const cars = [{
           Color: "Yellow",
           Power: "485 HP",
           Mileage: "5,000 km",
-          Price: "55,000 USD"
+          Price: "55000"
         },
         Img: ""
       },
@@ -95,7 +95,7 @@ const cars = [{
           Color: "Red",
           Power: "661 HP",
           Mileage: "2,000 km",
-          Price: "275,000 USD"
+          Price: "275000"
         },
         Img: ""
       },
@@ -107,7 +107,7 @@ const cars = [{
           Color: "Blue",
           Power: "460 HP",
           Mileage: "20,000 km",
-          Price: "45,000 USD"
+          Price: "45000"
         },
         Img: "cars/ford-mustang.jpg" 
       },
@@ -119,7 +119,7 @@ const cars = [{
           Color: "Gray",
           Power: "174 HP",
           Mileage: "12,000 km",
-          Price: "22,000 USD"
+          Price: "22000"
         },
         Img: ""
       },
@@ -131,7 +131,7 @@ const cars = [{
           Color: "Silver",
           Power: "180 HP",
           Mileage: "8,000 km",
-          Price: "25,000 USD"
+          Price: "25000"
         },
         Img: ""
       },
@@ -143,7 +143,7 @@ const cars = [{
           Color: "Green",
           Power: "296 HP",
           Mileage: "18,000 km",
-          Price: "60,000 USD"
+          Price: "60000"
         },
         Img: ""
       },
@@ -155,7 +155,7 @@ const cars = [{
           Color: "Black",
           Power: "293 HP",
           Mileage: "14,000 km",
-          Price: "42,000 USD"
+          Price: "42000"
         },
         Img: ""
       },
@@ -167,7 +167,7 @@ const cars = [{
           Color: "White",
           Power: "191 HP",
           Mileage: "5,000 km",
-          Price: "30,000 USD"
+          Price: "30000"
         },
         Img: ""
       }, 
@@ -212,9 +212,11 @@ function carArray() {
 
         for (const [key, value] of Object.entries(auto.Info)) {
             const newCarInfo = document.createElement("p");
-            newCarInfo.innerHTML = `${key}: ${value}`
             if (key == "Price") {
-                newCarInfo.classList.add("price")
+              newCarInfo.innerHTML = `${key}: ${value} USD`
+              newCarInfo.classList.add("price")
+            }else{
+            newCarInfo.innerHTML = `${key}: ${value}`
             }
             newCarInfoContainer.appendChild(newCarInfo)
         }
@@ -231,10 +233,9 @@ for (let i = 0; i < $carBox.length; i++) {
     $carBox[i].addEventListener(`click`, () => {
         window.localStorage.setItem('carSpec', JSON.stringify(filteredCars[i]));
         window.location.href = `form.html`
+        window.localStorage.setItem(`price`, parseInt(filteredCars[i].Info.Price))
     })
-}
-    
-   
+}  
 }
 
 $carBrands.addEventListener("change", () => {
@@ -242,4 +243,4 @@ $carBrands.addEventListener("change", () => {
 })
 
 carArray();
-
+localStorage.removeItem("accesoriesMemory")
