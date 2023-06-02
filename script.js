@@ -61,7 +61,7 @@ const cars = [{
           Mileage: "25,000 km",
           Price: "50000"
         },
-        Img: ""
+        Img: "cars/bmw-x5.jpg"
       },
       {
         Brand: "Chevrolet",
@@ -73,7 +73,7 @@ const cars = [{
           Mileage: "15,000 km",
           Price: "35000"
         },
-        Img: ""
+        Img: "cars/chevrolet-camaro.jpg"
       },
       {
         Brand: "Dodge",
@@ -85,7 +85,7 @@ const cars = [{
           Mileage: "5,000 km",
           Price: "55000"
         },
-        Img: ""
+        Img: "cars/dodge-challenger.jpg"
       },
       {
         Brand: "Ferrari",
@@ -97,7 +97,7 @@ const cars = [{
           Mileage: "2,000 km",
           Price: "275000"
         },
-        Img: ""
+        Img: "cars/ferrari-488gtb.jpg"
       },
       {
         Brand: "Ford",
@@ -121,7 +121,7 @@ const cars = [{
           Mileage: "12,000 km",
           Price: "22000"
         },
-        Img: ""
+        Img: "cars/honda-civic.jpg"
       },
       {
         Brand: "Hyundai",
@@ -133,7 +133,7 @@ const cars = [{
           Mileage: "8,000 km",
           Price: "25000"
         },
-        Img: ""
+        Img: "cars/hyundai-sonata.jpg"
       },
       {
         Brand: "Jaguar",
@@ -145,7 +145,7 @@ const cars = [{
           Mileage: "18,000 km",
           Price: "60000"
         },
-        Img: ""
+        Img: "cars/jaguar-ftype.jpg"
       },
       {
         Brand: "Jeep",
@@ -157,7 +157,7 @@ const cars = [{
           Mileage: "14,000 km",
           Price: "42000"
         },
-        Img: ""
+        Img: "cars/jeep-grandcherokee.jpg"
       },
       {
         Brand: "Kia",
@@ -169,7 +169,7 @@ const cars = [{
           Mileage: "5,000 km",
           Price: "30000"
         },
-        Img: ""
+        Img: "cars/kia-sorento.jpg"
       }, 
 ]
 
