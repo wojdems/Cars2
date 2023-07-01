@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="general.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="darkMode.css" />
     <script src="script.js" defer></script>
+    <script src="darkMode.js" defer></script>
     <title>Car Sales</title>
-</head>
+  </head>
 
-<body class="main">
-    <header> CAR SALES <img src="CarLogo/audi.jpg" alt=""> <img src="CarLogo/BMW.jpeg" alt=""> <img
-            src="CarLogo/mercedes.png" alt=""> </header>
+  <body class="main">
+    <header>
+      CAR SALES <img src="CarLogo/audi.jpg" alt="" />
+      <img src="CarLogo/BMW.jpeg" alt="" />
+      <img src="CarLogo/mercedes.png" alt="" />
+    </header>
     <div class="searchBar">
-        <label for="carBrands">Choose brand: </label>
-        <input list="carBrandOption" id="carBrands" name="carBrands" />
-        <datalist id="carBrandOption">
-        </datalist>
+      <label for="carBrands">Choose brand: </label>
+      <input list="carBrandOption" id="carBrands" name="carBrands" />
+      <datalist id="carBrandOption"> </datalist>
     </div>
-    <div id="allCars">
-
-
+    <div class="switch">
+      <input id="toggle__switch" type="checkbox" />
+      <label for="toggle__switch"></label>
     </div>
-</body>
-
+    <div id="allCars"></div>
+  </body>
 </html>

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="general.css" />
     <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="darkMode.css" />
     <script src="formjs.js" defer></script>
+    <script src="darkMode.js" defer></script>
     <title>Car Sales</title>
   </head>
 
@@ -16,6 +18,10 @@
       <img src="CarLogo/BMW.jpeg" alt="" />
       <img src="CarLogo/mercedes.png" alt="" />
     </header>
+    <div class="switch">
+      <input id="toggle__switch" type="checkbox" />
+      <label for="toggle__switch"></label>
+    </div>
     <div class="content">
       <h1>Fillout the form and buy your dream car!</h1>
       <form id="buyerDetails" method="get" action="thankYouPage.html">
@@ -62,13 +68,26 @@
       <div class="accesoriesBox">
         <h2>Accesories</h2>
         <div class="accesories">
-          Steel rims: 4500 <button class="accesoriesButton rims" data-price='4500'>+</button>
-          <button class="accesoriesButton rims visibilityHidden " data-price='-4500'>-</button>
+          Steel rims: 4500
+          <button class="accesoriesButton rims" data-price="4500">+</button>
+          <button
+            class="accesoriesButton rims visibilityHidden"
+            data-price="-4500"
+          >
+            -
+          </button>
         </div>
         <div class="accesories">
           Additional 5-year warranty: 15000
-          <button class="accesoriesButton warranty" data-price='15000'>+</button>
-          <button class="accesoriesButton warranty visibilityHidden " data-price='-15000'>-</button>
+          <button class="accesoriesButton warranty" data-price="15000">
+            +
+          </button>
+          <button
+            class="accesoriesButton warranty visibilityHidden"
+            data-price="-15000"
+          >
+            -
+          </button>
         </div>
       </div>
     </div>

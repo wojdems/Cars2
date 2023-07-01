@@ -1,21 +1,29 @@
 body {
-    background-color: ghostwhite;
+  background-color: ghostwhite;
 }
 
 header img {
-    max-height: 100px;
-    width: auto;
+  height: auto;
+  max-width: 5%;
 }
 
 header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 1%;
-    border-bottom: solid lightgray 1px;
-    margin-bottom: 1%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%;
+  border-bottom: solid lightgray 1px;
+  margin-bottom: 1%;
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  header img {
+    height: auto;
+    width: 70px;
+    max-width: 100%;
+  }
 }
