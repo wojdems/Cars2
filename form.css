@@ -1,54 +1,90 @@
+.content {
+  border: 2px solid grey;
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px 10px lightgray;
+}
+
+.darkMode .content {
+  box-shadow: 10px 10px 10px 10px rgb(43, 43, 43);
+}
+
+.content h1 {
+  text-align: center;
+}
+
+.fillOut {
+  display: flex;
+  justify-content: center;
+}
 
 form {
-    display: inline-block;
-    max-width: 200px;
- 
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.accesoriesBox {
-    margin-left: 50px;
-    width: 400px;
-}
-
-.accesories {
-    display: flex;
-    border: 3px solid black;
-    padding: 20px;
-    margin: 5px;
+.aaab {
+  display: block;
 }
 
 #chosedCarDetails {
-    display: inline-block;
-    margin-left: 300px;
-}
-
-.accesoriesButton{
-margin-left: 10px;
-background-color: gray;
-padding: 5px 15px;
-text-align: center;
-cursor: pointer;
-}
-
-.visibilityHidden {
-    visibility: hidden;
-}
-
-.content {
-    text-align: center;
-}
-
-footer {
-    text-align: left;
-    margin: 30px;
+  text-align: end;
 }
 
 #buyNow {
-    background-color: red;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+#buyNow:hover {
+  background-color: rgb(170, 0, 0);
+}
+
+.accesoriesBox {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.accesories {
+  border: 3px solid gray;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  width: 280px;
+}
+
+.darkMode .accesories {
+  border: 3px solid white;
+}
+
+.accesoriesButton {
+  background-color: gray;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.accesoriesButton:hover {
+  background-color: lightgray;
+}
+
+.visibilityHidden {
+  visibility: hidden;
+}
+
+footer {
+  text-align: left;
+  margin: 30px;
+}
+
+@media only screen and (min-width: 560px) {
+  .aaab {
+    display: flex;
+    justify-content: space-around;
+  }
 }
