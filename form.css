@@ -23,7 +23,7 @@ form {
   flex-direction: column;
 }
 
-.aaab {
+.youWillBeFlex {
   display: block;
 }
 
@@ -82,9 +82,20 @@ footer {
   margin: 30px;
 }
 
-@media only screen and (min-width: 560px) {
-  .aaab {
+@media only screen and (min-width: 750px) {
+  .youWillBeFlex {
     display: flex;
     justify-content: space-around;
+  }
+
+  .helpMeCenterContent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    width: 75%;
   }
 }
